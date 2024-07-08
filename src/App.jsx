@@ -6,6 +6,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import TodoList from './components/TodoList';
 import { AuthProvider } from './context/AuthContext';
+import './App.css';
 
 function App() {
   return (

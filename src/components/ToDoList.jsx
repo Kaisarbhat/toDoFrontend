@@ -58,7 +58,7 @@ const TodoList = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h2>Todo List</h2>
       <form onSubmit={addTodo}>
         <input 
@@ -72,14 +72,16 @@ const TodoList = () => {
       <ul>
         {todos.map(todo => (
           <li key={todo._id}>
-            <input 
-              type="checkbox" 
-              checked={todo.completed} 
-              onChange={() => toggleTodo(todo._id)} 
-            />
-            <span style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
-              {todo.text}
-            </span>
+            <div>
+              <input 
+                type="checkbox" 
+                checked={todo.completed} 
+                onChange={() => toggleTodo(todo._id)} 
+              />
+              <span style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
+                {todo.text}
+              </span>
+            </div>
             <button onClick={() => deleteTodo(todo._id)}>Delete</button>
           </li>
         ))}
