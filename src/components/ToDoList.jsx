@@ -36,7 +36,7 @@ const TodoList = () => {
   const toggleTodo = async (id) => {
     try {
       const todo = todos.find(t => t._id === id);
-      const res = await axios.put(`http://localhost:5000/api/todos/${id}`, 
+      const res = await axios.put(`/api/todos/${id}`, 
         { completed: !todo.completed }, 
         { headers: { 'x-auth-token': localStorage.getItem('token') } }
       );
@@ -48,7 +48,7 @@ const TodoList = () => {
 
   const deleteTodo = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/todos/${id}`, {
+      await axios.delete(`/api/todos/${id}`, {
         headers: { 'x-auth-token': localStorage.getItem('token') }
       });
       setTodos(todos.filter(t => t._id !== id));

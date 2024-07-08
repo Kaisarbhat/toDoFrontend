@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; // Change this line
 import axios from 'axios';
 import { AuthContext } from '../context/AuthContext';
 
@@ -7,15 +7,15 @@ const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const { setIsAuthenticated } = useContext(AuthContext);
-  const history = useHistory();
+  const navigate = useNavigate(); // Change this line
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/users/login', { username, password });
+      const res = await axios.post('/api/users/login', { username, password });
       localStorage.setItem('token', res.data.token);
       setIsAuthenticated(true);
-      history.push('/todos');
+      navigate('/todos'); // Change this line
     } catch (err) {
       console.error(err.response.data);
     }
