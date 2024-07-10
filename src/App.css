@@ -16,14 +16,16 @@ body {
 }
 
 .container {
-  max-width: 800px;
+  min-width: 800px;
   margin: 0 auto;
   padding: 20px;
 }
 
 nav {
   background-color: var(--primary-color);
+  color: black;
   padding: 10px 0;
+  width: 100%;
 }
 
 nav ul {
@@ -39,7 +41,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: white;
+  color:var(--primary-color);
   text-decoration: none;
   font-weight: bold;
 }
@@ -50,19 +52,23 @@ h1, h2 {
 
 form {
   background-color: white;
-  padding: 20px;
+  width: 60%;
+  padding: 40px 30px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(34, 161, 252, 0.1);
   margin-bottom: 20px;
+  color: black;
 }
 
 input[type="text"],
 input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
+  width: 90%;
+  padding: 20px 30px;
+  margin-bottom: 20px;
   border: 1px solid #ddd;
+  color: black;
   border-radius: 4px;
+  background-color: aliceblue;
 }
 
 button {
@@ -72,6 +78,7 @@ button {
   padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
+  margin-top: 10px;
   transition: background-color 0.3s ease;
 }
 
